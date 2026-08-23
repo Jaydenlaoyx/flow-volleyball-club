@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/siteConfig";
+
 export default function Navbar() {
   return (
     <header className="navbar">
@@ -11,6 +13,14 @@ export default function Navbar() {
           <a href="#about">About</a>
           <a href="#training">Training</a>
           <a href="#contact">Contact</a>
+
+          <a
+            href={siteConfig.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
         </nav>
 
         <a href="#contact" className="navbar-cta">

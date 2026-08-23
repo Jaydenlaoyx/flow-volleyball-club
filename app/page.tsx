@@ -1,6 +1,7 @@
 import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import Hero from "@/components/Hero";
+import Instagram from "@/components/Instagram";
 import Navbar from "@/components/Navbar";
 import Training from "@/components/Training";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Benefits />
       <Training />
+      <Instagram />
     </main>
   );
 }
