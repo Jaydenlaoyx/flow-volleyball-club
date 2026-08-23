@@ -408,6 +408,172 @@ body {
   line-height: 1.7;
 }
 
+/* =========================
+   TRAINING
+========================= */
+
+.training {
+  background: var(--surface);
+}
+
+.training-header {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.training-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.training-header > p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.training-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--surface-light);
+}
+
+.training-main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 320px;
+}
+
+.training-day {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37, 99, 235, 0.28),
+      rgba(37, 99, 235, 0.04)
+    ),
+    var(--surface-light);
+}
+
+.training-day span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.training-day strong {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.training-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.training-detail {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-left: 1px solid var(--border);
+}
+
+.training-detail span {
+  margin-bottom: auto;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.training-detail strong {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+.training-detail small {
+  margin-top: 0.3rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.training-location {
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.training-location-label {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--blue-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.training-location h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.training-location p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.location-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  color: var(--blue-light);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.location-link:hover {
+  color: var(--text-primary);
+  gap: 0.9rem;
+}
+
+.training-cta {
+  margin-top: 1.5rem;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.training-cta p {
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.training-cta span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
   .navbar-inner {
     min-height: 70px;
@@ -488,5 +654,64 @@ body {
 
   .benefit-card:hover {
     padding-left: 0;
+  }
+
+  .training-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .training-main {
+    grid-template-columns: 1fr;
+  }
+
+  .training-day {
+    min-height: 260px;
+    padding: 2rem;
+  }
+
+  .training-details {
+    border-top: 1px solid var(--border);
+  }
+
+  .training-detail {
+    min-height: 190px;
+    padding: 2rem;
+  }
+
+  .training-detail:first-child {
+    border-left: none;
+  }
+
+  .training-detail strong {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .training-location {
+    padding: 2rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .training-cta {
+    padding: 2rem;
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .training-details {
+    grid-template-columns: 1fr;
+  }
+
+  .training-detail {
+    border-left: none;
+  }
+
+  .training-detail + .training-detail {
+    border-top: 1px solid var(--border);
   }
 }
