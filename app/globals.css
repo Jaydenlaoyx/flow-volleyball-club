@@ -18,3 +18,285 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+:root {
+  --background: #050505;
+  --surface: #0d0d0d;
+  --surface-light: #151515;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+
+  --blue: #2563eb;
+  --blue-light: #3b82f6;
+  --blue-dark: #1d4ed8;
+
+  --border: rgba(255, 255, 255, 0.1);
+
+  --max-width: 1200px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.container {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-inner {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.navbar-logo span {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text-primary);
+}
+
+.navbar-cta {
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar-cta:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 140px 0 80px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  margin-bottom: 1.5rem;
+  color: var(--blue-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  max-width: 900px;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.hero-title span {
+  color: var(--blue-light);
+}
+
+.hero-description {
+  max-width: 600px;
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  color: white;
+}
+
+.button-primary:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+}
+
+.button-secondary {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-details {
+  display: flex;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.hero-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hero-detail-label {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-detail strong {
+  font-size: 0.95rem;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  width: 500px;
+  height: 500px;
+  top: 10%;
+  right: -200px;
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.hero-glow-two {
+  width: 350px;
+  height: 350px;
+  bottom: -150px;
+  left: 10%;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    min-height: 70px;
+  }
+
+  .navbar-logo span {
+    display: none;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-cta {
+    padding: 0.6rem 1rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 120px 0 60px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+}
