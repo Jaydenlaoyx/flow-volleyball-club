@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Instagram from "@/components/Instagram";
 import Navbar from "@/components/Navbar";
 import Training from "@/components/Training";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Benefits />
       <Training />
       <Instagram />
+      <Contact />
     </main>
   );
 }
