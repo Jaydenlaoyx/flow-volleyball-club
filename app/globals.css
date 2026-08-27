@@ -36,14 +36,47 @@ a {
   --max-width: 1200px;
 }
 
+[data-theme="light"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-light: #f1f5f9;
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  --blue: #2563eb;
+  --blue-light: #2563eb;
+  --blue-dark: #1d4ed8;
+
+  --border: rgba(15, 23, 42, 0.1);
+}
+
 body {
   background: var(--background);
   color: var(--text-primary);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .container {
   width: min(90%, var(--max-width));
   margin: 0 auto;
+}
+
+.navbar,
+.about,
+.benefits,
+.training,
+.instagram-section,
+.contact,
+.about-card,
+.training-card,
+.contact-form-wrapper,
+.instagram-card {
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 /* =========================
@@ -57,6 +90,8 @@ body {
   width: 100%;
   z-index: 100;
   border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--background) 75%, transparent);
+  backdrop-filter: blur(14px);
 }
 
 .navbar-inner {
@@ -113,6 +148,45 @@ body {
 .navbar-cta:hover {
   background: var(--blue);
   transform: translateY(-2px);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.theme-toggle:disabled {
+  cursor: default;
+  opacity: 0.6;
+  transform: none;
 }
 
 /* =========================
@@ -201,11 +275,11 @@ body {
 
 .button-secondary {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-light);
 }
 
 .button-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface);
 }
 
 .hero-details {
@@ -631,7 +705,7 @@ body {
   gap: 1rem;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-light);
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
@@ -641,7 +715,7 @@ body {
 .instagram-link:hover {
   transform: translateY(-3px);
   border-color: rgba(59, 130, 246, 0.45);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface);
 }
 
 .instagram-icon {
@@ -821,7 +895,8 @@ body {
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: #666666;
+  color: var(--text-secondary);
+  opacity: 0.7;
 }
 
 .form-field input:focus,

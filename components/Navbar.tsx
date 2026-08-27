@@ -1,3 +1,4 @@
+import ThemeToggle from "@/components/ThemeToggle";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function Navbar() {
@@ -23,9 +24,13 @@ export default function Navbar() {
           </a>
         </nav>
 
-        <a href="#contact" className="navbar-cta">
-          Join a Session
-        </a>
+        <div className="navbar-actions">
+          <ThemeToggle />
+
+          <a href="#contact" className="navbar-cta">
+            Join a Session
+          </a>
+        </div>
       </div>
     </header>
   );
