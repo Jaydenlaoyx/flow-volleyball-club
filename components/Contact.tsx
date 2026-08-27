@@ -35,17 +35,30 @@ export default function Contact() {
     }));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     setStatus("loading");
 
-    // Temporary frontend-only behaviour.
-    // Email delivery will be added in the next step.
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to send enquiry");
+      }
+
       setStatus("success");
       setFormData(initialFormState);
-    }, 700);
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   }
 
   return (
