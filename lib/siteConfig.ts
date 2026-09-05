@@ -3,4 +3,5 @@ export const siteConfig = {
   instagramHandle: "@flow_volleyball",
   instagramUrl: "https://www.instagram.com/flow_volleyball/",
   location: "Melbourne, Victoria",
+  url: "https://flow-volleyball-club.vercel.app",
 };

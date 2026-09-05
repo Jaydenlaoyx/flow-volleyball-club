@@ -1,3 +1,7 @@
+## Preview
+
+![Flow Volleyball Club Website](./public/flow-preview.png)
+
 # Flow Volleyball Club
 
 A modern, responsive website built for Flow Volleyball Club, a Melbourne-based volleyball community offering structured weekly training sessions.
@@ -6,7 +10,7 @@ This project was designed and developed as a client-style business website, with
 
 ## Live Website
 
-Deployment URL coming soon.
+[View the live website](https://flow-volleyball-club.vercel.app)
 
 ## Overview
 

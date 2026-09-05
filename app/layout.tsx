@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  
   title: {
     default: "Flow Volleyball Club",
     template: "%s | Flow Volleyball Club",
