@@ -31,7 +31,7 @@ export default function Instagram() {
 
               <div>
                 <span>Follow us on Instagram</span>
-                <strong>@flow_volleyball</strong>
+                <strong>{siteConfig.instagramHandle}</strong>
               </div>
 
               <span className="instagram-arrow" aria-hidden="true">
